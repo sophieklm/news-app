@@ -33,6 +33,14 @@ var assert = {
       throw new Error("Assertion failed: " + a + "is not an instance of " + b);
     }
     console.log("isConstructedFrom Test Passes")
+  },
+
+  isArray: function(a) {
+    if(Object.prototype.toString.call(a) !== '[object Array]' ) {
+      throw new Error('Assertion failed: ' + a + ' is not an array');
+    } else {
+      console.log('isArray Test Passes');
+    }
   }
 
 };
