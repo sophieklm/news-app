@@ -1,10 +1,10 @@
 function init() {
 
   getGuardianResponse();
-  newsfeed = new Newsfeed();
+  controller = new Controller();
   setTimeout(function() {
-    newsfeed.addHeadlines(guardianResponse);
-    newsfeed.getHeadlines();
+    controller.view.newsfeed.addHeadlines(guardianResponse);
+    controller.populatePage(guardianResponse);
   },1000);
 
 }
