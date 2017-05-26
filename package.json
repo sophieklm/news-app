@@ -2,14 +2,15 @@
   "name": "news-app",
   "version": "1.0.0",
   "description": "",
-  "main": "config.js",
+  "main": "index.js",
   "dependencies": {
-    "guardian-js": "^1.0.8"
+    "guardian-js": "^1.0.8",
+    "http-server": "^0.10.0"
   },
   "devDependencies": {},
   "scripts": {
-    "test": "mocha"
+    "test": ""
   },
-  "author": "",
+  "author": "sophie mann",
   "license": "ISC"
 }
