@@ -12,11 +12,11 @@ function testNewsfeedHasHeadlines() {
 }
 testNewsfeedHasHeadlines();
 
-function testNewsfeedShowsHeadlines() {
+function testNewsfeedGetsHeadlines() {
   console.log('Test newsfeed shows headlines:');
   var response = [{"response":{"results":[{"webTitle":"Todays Headline"}]}}]
   var newsfeed = new Newsfeed();
   newsfeed.addHeadlines(response);
   assert.isEqual(newsfeed.getHeadlines()[0].webTitle, "Todays Headline");
 }
-testNewsfeedShowsHeadlines();
+testNewsfeedGetsHeadlines();
