@@ -8,8 +8,8 @@ Newsfeed.prototype.getHeadlines = function() {
   return this.headlines;
 };
 
-Newsfeed.prototype.addHeadlines = function(response) {
-  this.headlines = response;
+Newsfeed.prototype.addHeadlines = function(guardianResponse) {
+  this.headlines = guardianResponse[0].response.results;
 };
 
 exports.Newsfeed = Newsfeed;

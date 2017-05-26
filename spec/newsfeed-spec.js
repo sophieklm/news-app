@@ -14,9 +14,9 @@ testNewsfeedHasHeadlines();
 
 function testNewsfeedShowsHeadlines() {
   console.log('Test newsfeed shows headlines:');
-  var headline = "Todays Headline";
+  var response = [{"response":{"results":[{"webTitle":"Todays Headline"}]}}]
   var newsfeed = new Newsfeed();
-  newsfeed.addHeadlines(headline);
-  assert.isEqual(newsfeed.getHeadlines(), headline);
+  newsfeed.addHeadlines(response);
+  assert.isEqual(newsfeed.getHeadlines()[0].webTitle, "Todays Headline");
 }
 testNewsfeedShowsHeadlines();
