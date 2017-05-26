@@ -1,3 +1,10 @@
+function testViewInitialisesWithNewsfeed(){
+  console.log('Test view has newsfeed:');
+  var view = new View();
+  assert.isConstructedFrom(view.newsfeed, Newsfeed);
+}
+testViewInitialisesWithNewsfeed();
+
 function testViewShowsHeadlines(){
   console.log('Test view shows headlines:');
   var view = new View();
