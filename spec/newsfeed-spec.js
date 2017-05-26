@@ -6,7 +6,7 @@ function testNewsfeedCanBeConstructed(){
 testNewsfeedCanBeConstructed();
 
 function testNewsfeedHasHeadlines() {
-  console.log('Test newsfeed has headlines:');
+  console.log('Test newsfeed can contain headlines:');
   var newsfeed = new Newsfeed();
   assert.isArray(newsfeed.headlines);
 }
@@ -16,6 +16,7 @@ function testNewsfeedShowsHeadlines() {
   console.log('Test newsfeed shows headlines:');
   var headline = "Todays Headline";
   var newsfeed = new Newsfeed();
-  assert.isEqual(newsfeed.headlines, headline);
+  newsfeed.addHeadlines(headline);
+  assert.isEqual(newsfeed.getHeadlines(), headline);
 }
 testNewsfeedShowsHeadlines();
