@@ -1,13 +1,15 @@
 (function(exports) {
-  function View(newsfeed = new Newsfeed()) {
+  function View(newsfeed) {
     this.newsfeed = newsfeed;
   }
 
   View.prototype.getHTML = function(guardianResponse) {
     string = "";
-    for (i=0;i<this.newsfeed.getHeadlines(guardianResponse).length; i++){
-      string += "<li><div>" + this.newsfeed.getHeadlines(guardianResponse)[i].webTitle + "</div></li>"
-    };
+    counter = 0;
+    this.newsfeed.getHeadlines().forEach(function(item){
+      string += `<li><div><a href='javascript:showSummary(${counter})'>` + item.webTitle + "</a></div></li>";
+      counter ++;
+    });
       return "<ul>" + string + "</ul>";
   };
 
