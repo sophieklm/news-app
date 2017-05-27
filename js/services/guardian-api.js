@@ -12,7 +12,7 @@ function getResponse(method) {
 }
 
 function getHeadlines() {
-  return "http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/search?"
+  return "http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/search?show-fields=thumbnail"
 }
 
 function getSummary(id){
