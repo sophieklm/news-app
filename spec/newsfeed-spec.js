@@ -1,22 +1,31 @@
+var response = [{"response":{"results":[{"webTitle":"Todays Headline", "webUrl" : "url"}]}}]
+var newsfeed = new Newsfeed(response);
+
 function testNewsfeedCanBeConstructed(){
   console.log('Test newsfeed can be constructed:');
-  var newsfeed = new Newsfeed();
   assert.isConstructedFrom(newsfeed, Newsfeed);
 }
 testNewsfeedCanBeConstructed();
 
 function testNewsfeedHasHeadlines() {
   console.log('Test newsfeed can contain headlines:');
-  var newsfeed = new Newsfeed();
   assert.isArray(newsfeed.headlines);
 }
 testNewsfeedHasHeadlines();
 
 function testNewsfeedGetsHeadlines() {
   console.log('Test newsfeed shows headlines:');
-  var response = [{"response":{"results":[{"webTitle":"Todays Headline"}]}}]
-  var newsfeed = new Newsfeed();
-  newsfeed.addHeadlines(response);
   assert.isEqual(newsfeed.getHeadlines()[0].webTitle, "Todays Headline");
 }
 testNewsfeedGetsHeadlines();
+
+
+Newsfeed.prototype.getUrl = function(index){
+  return this.headlines[index].webUrl;
+};
+
+function testNewsfeedGetsUrl() {
+  console.log('Test newsfeed gets urls:');
+  assert.isEqual(newsfeed.getUrl(0), "url");
+}
+testNewsfeedGetsUrl();
