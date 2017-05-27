@@ -1,12 +1,10 @@
 function init() {
 
-  getGuardianResponse();
-  controller = new Controller();
+  var guardianResponse = getResponse(getHeadlines());
   setTimeout(function() {
-    controller.view.newsfeed.addHeadlines(guardianResponse);
-    controller.populatePage(guardianResponse);
-  },1000);
-
+    controller = new Controller(guardianResponse);
+    controller.populatePage();
+  },1500);
 }
 
 window.onload = init;
