@@ -1,15 +1,16 @@
 (function(exports){
 
-function Newsfeed() {
-  this.headlines = [];
+function Newsfeed(guardianResponse) {
+  this.headlines = guardianResponse[0].response.results;
 }
 
 Newsfeed.prototype.getHeadlines = function() {
   return this.headlines;
 };
 
-Newsfeed.prototype.addHeadlines = function(guardianResponse) {
-  this.headlines = guardianResponse[0].response.results;
+
+Newsfeed.prototype.getUrl = function(index){
+  return this.headlines[index].webUrl;
 };
 
 exports.Newsfeed = Newsfeed;
