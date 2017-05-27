@@ -1,4 +1,4 @@
-var response = [{"response":{"results":[{"webTitle":"Todays Headline", "webUrl" : "url"}]}}]
+var response = [{"response":{"results":[{"webTitle":"Todays Headline", "webUrl" : "url", "fields":[{"thumbnail" : "img.jpg"}]}]}}]
 var newsfeed = new Newsfeed(response);
 
 function testNewsfeedCanBeConstructed(){
